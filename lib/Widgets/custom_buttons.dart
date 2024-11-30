@@ -1,10 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:raya_institute_chat_app/Core/Constants/colors.dart';
 
 class CustomButtons extends StatelessWidget {
-  const CustomButtons({super.key});
-
+  const CustomButtons({
+    super.key,
+    required this.text,
+  });
+  final String text;
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
@@ -19,7 +24,7 @@ class CustomButtons extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Start',
+            text,
             style: GoogleFonts.lora(
               color: kSecondary,
               fontSize: w * 0.07,

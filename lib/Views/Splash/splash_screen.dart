@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:raya_institute_chat_app/Core/Constants/colors.dart';
+import 'package:raya_institute_chat_app/Views/Home/onboarding_screen.dart';
 import 'package:raya_institute_chat_app/Widgets/custom_buttons.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -101,7 +102,16 @@ class _SplashScreenState extends State<SplashScreen>
         ],
       ),
       floatingActionButton: _showButton
-          ? GestureDetector(onTap: () {}, child: const CustomButtons())
+          ? GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const OnboardingScreen()));
+              },
+              child: const CustomButtons(
+                text: 'Start',
+              ))
           : null,
     );
   }
